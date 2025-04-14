@@ -21,8 +21,11 @@ jobs:
       - name: Instalar dependencias
         run: npm install --include=dev
 
-      - name: Verificar que jest esté en node_modules
-        run: ls -l node_modules/.bin
+      - name: Arreglar permisos de jest
+        run: chmod +x node_modules/.bin/jest
 
-      - name: Ejecutar pruebas
-        run: npx jest --coverage
+      - name: Verificar versión de jest
+        run: npx jest --version
+
+      - name: Ejecutar pruebas con cobertura
+        run: npm run test:coverage
