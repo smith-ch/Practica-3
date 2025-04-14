@@ -2,27 +2,24 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Usar Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
+      - name: Build el sitio
+        run: |
+          npm install
+          npm run build
 
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Build (opcional si generas HTML dinámico)
-        run: echo "build step (si aplica)"
-
-      - name: Desplegar a GitHub Pages
+      - name: Deploy a GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
