@@ -1,9 +1,16 @@
 const express = require('express');
 const app = express();
+const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
+  res.send('¡Hola mundo!');
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor en puerto ${PORT}`));
+// Exportar app para pruebas, iniciar servidor solo si no estamos en test
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Servidor en puerto ${port}`);
+  });
+}
+
+module.exports = app;
