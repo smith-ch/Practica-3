@@ -12,11 +12,20 @@ Este proyecto consiste en una aplicación web sencilla con pruebas automatizadas
 
 ## 📁 Estructura del proyecto
 
-Practica-3/ │ ├── src/ │ └── index.js ├── test/ │ ├── index.test.js │ └── integration.test.js ├── .github/ │ └── workflows/ │ ├── ci.yml │ └── deploy.yml ├── public/ │ └── index.html ├── package.json └── README.md
-
-bash
-Copiar
-Editar
+Practica-3/ │ 
+├── src/ 
+│ └── index.js 
+├── test/ │ 
+├── index.test.js 
+│ └── integration.test.js 
+├── .github/ 
+│ └── workflows/ │ 
+├── ci.yml 
+│ └── deploy.yml 
+├── public/ 
+│ └── index.html 
+├── package.json 
+  └── README.md
 
 ## ✅ Scripts
 
